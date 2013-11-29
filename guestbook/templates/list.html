@@ -1,0 +1,31 @@
+<!--
+<?php
+foreach($vartem['msg'] as $row)
+	echo <<<EOT
+-->
+<table cellpadding="0" cellspacing="0" class="tableboder" style="table-layout:fixed;">
+  <tr>
+    <td class="msgleft">
+	{$row['left']}
+	</td>
+    <td class="msgright">
+	<div class="h1">{$row['right_top']}</div>
+	<div class="content">{$row['right_body']}</div>
+	<div class="h2">{$row['right_bottom']}</div>
+	</td>
+  </tr>
+</table>
+<!--
+EOT;
+echo <<<EOT
+-->
+<div class="pages">
+  <form name="form1" method="get" action="index.php">   
+    {$vartem['pageformat']}
+    <li class="p_num"><input name="page" type="text" id="page"></li>
+  </form>
+</div>
+<!--
+EOT;
+?>
+-->

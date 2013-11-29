@@ -1,0 +1,76 @@
+<!--
+<?php 
+switch($vartem['action']){
+	case 're':
+		echo <<<EOT
+-->
+<form id="form1" name="form1" method="post" action="">
+<div class="message">
+<h1>{$vartem['lang']['replym']}</h1>
+<span style="float:left; clear:none; height:100px; padding:2px 20px 0 15px; text-align:left;">{$vartem['lang']['replyer']}:<br><br>{$vartem['lang']['content']}:</span>
+<span style="float:right; margin-top:5px; width:405px">
+<input name="r_rname" type="text" id="r_rname" size="15" value="{$vartem['re']['name']}" style="float:left;">
+<textarea name="r_rcontent" id="r_rcontent" style="float:left; clear:both; margin-top:5px; font-size:12px; width:380px; height:110px;">{$vartem['re']['content']}</textarea>
+<input name="p_id" type="hidden" id="p_id" value="{$vartem['p_id']}">
+<input name="action" type="hidden" id="action" value="reply">
+<input name="referer" type="hidden" id="referer" value="{$vartem['referer']}">
+</span>
+<h2>
+  <input name="submit" type="submit" id="submit" value="{$vartem['lang']['replied']}" />
+  <input type="button" value="{$vartem['lang']['cancel']}" onclick="window.history.back();" />
+</h2>
+</div>
+</form>
+<!--
+EOT;
+		break;
+	case 'del':
+		echo <<<EOT
+-->
+<form id="form2" name="form2" method="post" action="">
+<div class="message">
+<h1>{$vartem['lang']['deletem']}</h1>
+<div style="text-align:center; padding:0px 0 10px 0;; line-height:200%;">
+{$vartem['lang']['ifdeletem']}
+
+<input name="action" type="hidden" id="action" value="del">
+<input name="p_id" type="hidden" id="p_id" value="{$vartem['p_id']}">
+<input name="referer" type="hidden" id="referer" value="{$vartem['referer']}">
+</div>
+<h2>
+  <input name="submit" type="submit" id="submit" value="{$vartem['lang']['deleted']}" />
+  <input type="button" value="{$vartem['lang']['cancel']}" onclick="window.history.back();" />
+</h2>
+</div>
+</form>
+<!--
+EOT;
+		break;
+	case 'up':
+		echo <<<EOT
+-->
+<form id="form2" name="form2" method="post" action="">
+<div class="message">
+<h1>{$vartem['lang']['upordown']}</h1>
+<div style="text-align:center; padding:10px 0 10px 0;; line-height:200%;">
+<input type="radio" name="up" value="1">
+{$vartem['lang']['upm']}&nbsp;&nbsp;
+<input type="radio" name="up" value="0">
+{$vartem['lang']['downm']}<br>
+<input name="p_id" type="hidden" id="p_id" value="{$vartem['p_id']}">
+<input name="action" type="hidden" id="action" value="up">
+<span style="text-align:center; padding:0px 0 10px 0;; line-height:200%;">
+<input name="referer" type="hidden" id="referer" value="{$vartem['referer']}">
+</span></div>
+<h2>
+  <input name="submit" type="submit" id="submit" value="{$vartem['lang']['submitted']}" />
+  <input type="button" value="{$vartem['lang']['cancel']}" onclick="window.history.back();" />
+</h2>
+</div>
+</form>
+<!--
+EOT;
+		break;
+}
+?>
+-->

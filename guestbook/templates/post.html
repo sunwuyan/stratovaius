@@ -1,0 +1,76 @@
+<!--
+<?php 
+echo <<<EOT
+-->
+<form id="msgform" name="msgform" method="post" action="" onSubmit="return checkForm();">
+  <table id="ptable" class="tableboder" cellpadding="0" cellspacing="1">
+    <tr>
+      <td colspan="4" class="header">{$vartem['lang']['post']}</td>
+    </tr>
+    <tr>
+      <td width="144" nowrap><b>{$vartem['lang']['nickname']}:<font color="#FF0000">*</font></b></td>
+      <td width="355" nowrap>
+	  	<input name="name" type="text" id="name" maxlength="10" value="{$vartem['row']['p_name']}">
+      </td>
+      <td nowrap width="142" rowspan="{$vartem['rowspan']}" align="center"><img id="ims" src="{$vartem['row']['p_image']}"></td>
+      <td nowrap width="127" rowspan="{$vartem['rowspan']}" align="center">
+		<input id="myim" name="myim" type="hidden" value="{$vartem['row']['p_image']}" />
+		<input id="choosebutton" type="button" onclick="chooseAvatars(this,'avatarstr');" value="{$vartem['lang']['addavatars']}" />
+	  </td>
+    </tr>
+	
+    {$vartem['row']['rcodeshow']}
+	
+    <tr>
+      <td><b>{$vartem['lang']['email']}:</b></td>
+      <td>
+	    <input name="email" type="text" id="email" size="30" maxlength="25" value="{$vartem['row']['p_email']}">
+	  </td>
+    </tr>
+    <tr>
+      <td><b>{$vartem['lang']['qq']}:</b></td>
+      <td>
+	    <input name="qq" type="text" id="qq" onKeyUp="this.value=this.value.replace(/[^\d]/i, '')" maxlength="11" value="{$vartem['row']['p_qq']}">
+	  </td>
+    </tr>
+    <tr>
+      <td><b>{$vartem['lang']['homepage']}:</b></td>
+      <td>
+	    <input name="homepage" type="text" id="homepage" size="40" maxlength="50" value="{$vartem['row']['p_homepage']}">
+	  </td>
+    </tr>
+	<tr id="avatarstr" style="display:none;">
+      <td colspan="4">
+	  
+	  {$vartem['avatars']}
+	  
+	  </td>
+    </tr>
+    <tr>
+      <td><b>{$vartem['lang']['title']}:</b></td>
+      <td colspan="3">
+	    <input name="title" type="text" id="title" size="60" maxlength="80" value="{$vartem['row']['p_title']}">
+	  </td>
+    </tr>
+    <tr>
+      <td><b>{$vartem['lang']['content']}:<font color="#FF0000">*</font></b></td>
+      <td colspan="3" bordercolor="#000000" bgcolor="#000000" style="padding-right:4px;">
+
+EOT;
+eval($vartem['row']['htmleditor']);
+echo <<<EOT
+
+ 	<input type="hidden" name="htmleditor" value="{$vartem['setting']['basic']['fck']['value']}" />  
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center">
+	  {$vartem['row']['submit']}
+      </td>
+    </tr>
+  </table>
+</form>
+<!--
+EOT;
+?>
+-->	 

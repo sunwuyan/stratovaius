@@ -1,0 +1,199 @@
+/*********************************************
+*
+* 程序名： php爱好者留言簿
+* 演  示： http://www.phpfans.net/guestbook/
+*
+* 作 者： 我不是鱼
+* Email： deng5765@163.com
+* 网 址： http://www.phpfans.net
+* 博 客:  http://www.phpfans.net/space/?2
+*
+* 版本： v2.0
+* 帮助： http://www.phpfans.net/guestbook/
+* 问题建议： http://www.phpfans.net/bbs/forumdisplay.php?fid=24&page=1
+* 更新日志： http://www.phpfans.net/bbs/viewthread.php?tid=6345&extra=page%3D1
+* php爱好者站：http://www.phpfans.net
+* php爱好者论坛： http://www.phpfans.net/bbs/
+*
+*********************************************/
+
+body { 
+	margin: 0; padding: 0 0 0 5px;
+	font: {smallfont} {defaultfont};line-height: 200%;
+	background: {bodybg};
+	scrollbar-base-color: #F8F8F8;scrollbar-arrow-color: #698CC3; 
+}
+
+/*ul { margin: 0; padding : 0; list-style : none; }
+li{ list-style:none;}*/
+form { 	margin: 0; }
+img{ border:0px;}
+a { color:#800080;text-decoration:none;}
+a:hover { color: #6C757A;text-decoration:underline; }
+img { border:0px;}
+p{ margin:5px;}
+form{ margin:0px;}
+iframe{ 
+	border:1px solid ButtonFace;
+}
+.statusBar{ display:none;}
+.toolbar table td{ background: ButtonFace;}
+td { background:#FFFFFF;}
+
+/*header*/
+.head { 
+	width: {width};height: 72px; 
+	color: {headcolor};	background:{headbg};
+	margin: 3px 0; padding: 5px 0 0 0;
+	border-top: 5px solid {headborder};border-bottom: 1px solid {headborder};
+}
+.logo{ float:left; margin-left:1px;}
+.banner{ float:left; clear:none; margin:1px 0 0 20px;}
+.top_info {	float: right; width: 90px; color: {headcolor};}
+*>.top_info p { margin:0;}
+.top_info a { color: {headcolor};text-decoration:none;}
+.top_info img{ height:{smallfont}; width:13px;}
+/*header end*/
+
+.title{
+    width:{width}; height:28px;font-size:{bigfont};
+	color:{navigationcolor};border:1px solid {navigationborder}; 
+}
+.title .left{ text-indent: 1em;vertical-align:bottom; text-align:left;}
+.title .right{ text-align:right; padding-right:10px; width:auto;}
+.title a:link,.title a:active,.title a:visited {color:{navigationcolor};}
+.title a:hover{ color: #6C757A;text-decoration:underline; }
+
+.tableboder{
+    width:{width}; font-size:{smallfont};
+	padding:0px; margin:5px auto;
+	border:1px solid {tableboder};
+}
+.msgleft{
+	height:auto; width:20%;padding:5px 0 0 0;color:{msgleftcolor};
+	font-size:{bigfont};text-align:center; vertical-align:top;
+    border-right:1px solid {tableboder};background:{msgleftbg};
+}
+.msgright { height:auto;background:{msgrightbg};}
+.msgleft img{ margin-bottom:8px;}
+.h1{
+    font-size:{bigfont}; border-bottom:1px solid {tableboder};
+	clear:both; margin:0px; padding:2px 10px 2px 10px;color:{msgtopcolor};
+}
+.h1 .span, .h2 .span{float:right; margin-right:5px;}
+.h1 .floornum{font-family:Arial, Helvetica, sans-serif; font-weight:bold;}
+
+.h2{
+    font-size:{bigfont};clear:both;
+	margin:0; padding:2px 0 2px 10px;
+	border-top:1px solid {tableboder};color:{msgbottomcolor};
+}
+.h2 img{vertical-align:middle; border:0px; margin:0 1px 0 5px;}
+.h2 a, .h2 a:hover{color:{msgbottomcolor}; text-decoration:none;}
+.h2 span a, .h2 span a:hover{font-size:{smallfont};}
+.h2 span img{ vertical-align:middle;margin:0 2px 0 10px;}
+.content{
+    font-size:{smallfont}; color:{msgcolor};
+	margin:5px 10px 0px 10px; padding:2px 10px 5px 10px;
+	clear:both; min-height:100px;border:1px solid #FFFFFF;
+	word-break:break-all;word-wrap: break-word; 
+}
+*>.content { overflow:hidden;}
+* html .content{ height:100px;}
+.content img{ margin:0 4px 0 4px;vertical-align:middle;}
+
+.reply{
+    font-size:{smallfont};color:{replycolor};line-height:180%;
+	clear:both; word-break:break-all;word-wrap: break-word;
+	margin:5px 10px 5px 10px; padding:1px 7px 1px 7px; 
+	border:1px dashed {replyborder}; background:{replybg};
+}
+.reply .areply{ font-weight:bold;}
+.reply .bottom{ width:100%; text-align:right;}
+
+.pages{ 
+	width:{width}; height:20px;
+	font: {smallfont} Arial, Tahoma;color:{pagecolor};
+	clear:both;margin:0 auto;
+}
+.pages a:link,.pages a:active,.pages a:visited {color:{pagelinkcolor};}
+.p_num {
+	clear:none; float:left; vertical-align: middle;
+	width:auto; margin-right:1px; padding:0 2px 0 2px; 
+	border: 1px solid {pageborder}; 
+}
+.p_curpage {
+	color: #92A05A;font-weight: bold; vertical-align: middle;
+    margin-right:1px; padding:0 2px 0 2px;	
+	border: 1px solid {pageborder};background-color: #d6e0ef;	
+	clear:none; float:left;
+}
+#page{ 
+    width:20px; height:15px; border:none;
+	float:left; clear:none; margin:0px; padding:0px;
+}
+#ptable input { 
+	margin:0px; padding:2px 2px 0 2px; border-width:1px;
+	font-family:Verdana,宋体;font-size:{smallfont};
+}
+.header{
+	color:{tableheadercolor}; font-weight:bold;
+	height:25px; text-align:center;background:{tableheader};
+}
+#ptable {background:{tbinborder};}
+#ptable td { padding:3px 0 2px 5px; font-weight:bold;}
+.message { 
+    border:1px solid {tableboder}; width:500px; line-height:200%; 
+	padding-bottom:5px; margin-top:5px;
+}
+.message h1{
+    font-size:14px; font-weight:blod;line-height:100%;color:{tableheadercolor}; 
+	border-bottom:1px solid #52628f;background:{tableheader}; 
+	margin:1px; margin-bottom:4px;padding:5px 0px 3px 0px;clear:both;
+}
+.message h2 {
+    font-size:12px;font-weight:normal;
+	margin:0px 0 0 0;padding:4px 0 0px 0px;clear:both; 	
+}
+.autohight{clear:both;margin:0;padding:0;font-size:1px;}
+.avatar {
+	width:105px; height:135px;
+	margin:0 2px 0 2px;cursor:pointer;
+	float:left;clear:none;
+}
+/* footer */
+.footer {	 
+	height:45px;width:{width}; color:{footcolor};
+	margin-top:5px; padding-top:3px;clear: both;
+	font-size:{smallfont}; text-align:left;line-height:22px;
+	border-top: 2px solid {tailborder}; background-color:{tailbg};
+}
+.copy{
+    float:left;font-family: Tahoma,MS Shell Dlg,宋体;
+}
+.us{ float:right; text-align:right; margin-right:2px;}
+
+.footer a:link,.footer a:active,.footer a:visited{color:{taillinkcolor}; font-weight:bold; }
+/* footer end  */
+
+.tips {
+	width:300px; height:280px; 
+	border:1px solid red;background-color:#EEEEEE;
+	position:absolute;z-index:1;top: 150px;padding:5px;
+}
+.updatemsg { 
+	height:260px;overflow:auto;
+}
+
+/* admin css */
+.admintb{ 
+	background:#eeeeee;text-align:left; margin:5px; width:98%;
+}
+.admintb td{ 
+	font-size:{bigfont};text-align:left; 
+	height:25px;padding-left:5px; background:#FFFFFF;
+}
+.admintb .header{ 
+	font-size:{bigfont};font-weight:bold; text-align:left; color:#000000;
+	height:25px; padding-left:5px;background:#DDDDDD;  
+}

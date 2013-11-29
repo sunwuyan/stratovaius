@@ -1,0 +1,97 @@
+##########################
+srbac 1.02.6
+##########################
+Bug Fixes:
+Remodev safe rule from authItem model
+Changed view path to authitem instead of authItem due to case sensitivity errors in some operation systems.
+Import SBaseController in modules init method.
+
+##########################
+srbac 1.02.5
+##########################
+Enhancements:
+When auto creating/deleting operations a check is performed to see if the items already exist.
+Bug Fixes:
+Udefined variable in assignments.php (Thanks to idle sign)
+ShowAssignments ajax call (Thanks to idle sign)
+Updates:
+Russian translation updated to v1.2 (Thanks to idle sign)
+
+##########################
+srbac 1.02.1
+##########################
+Enhancements:
+Srbac attribute alwaysAllowed
+Srbac attribute userActions to define which actions are assigned to using task by default
+layout attribute accepts path alias now
+##########################
+srbac 1.02
+##########################
+Enhancements:
+Automatic creation of operations based on controllers' actions.
+Also Creation of two tasks (using, administrating)
+The operations are also assigned to these tasks based on the action's name (all operations assigned to administrating
+and list, view, show actions to using)
+Mass delete of automatic created operations, tasks
+Cannot revoke Authority role if there's no other user with that role
+Custom not authorized page
+srbac front page
+srbac isInstalled attribute
+Added an SBaseController that must be extended for the use of automatic created auth items.
+add this in your applications config file in imports'application.modules.srbac.controllers.SBaseController',
+##########################
+srbac 1.01
+##########################
+Enhancements:
+Custom layout for srbac (layout must be in default application's layout folder)
+Add ajax indicators.
+Can call user assignments directly from your user's controller by 
+$this->renderPartial('application.modules.srbac.views.authItem.assignments',array("id"->$id),false,true);
+$id is the user's id
+Spanish translation (Ricardo Obregon)
+Russian translation (idle sign)
+##########################
+srbac 1.00
+##########################
+Enhancements:
+Srbac can be installed as a child module too
+Bug fixes:
+Fixed undefined variable "message"(thanks to sebi)
+Fixed possible SQL-injections flaw (thanks to Anticon)
+
+##########################
+srbac beta 4
+##########################
+Fixed bug when when a not-Authorizer-user tries to access SRBAC (thanks to Anticon)
+Fixed bug with deleting tables in wrong order (thanks to rabol)
+Fixed bug with wrong column name resulting in errors while working with innoDB engine(thanks to sebi)
+
+
+##########################
+srbac beta 3
+##########################
+Enhancements:
+View Roles / Tasks / Operations assigned to any user
+
+##########################
+srbac beta 2
+##########################
+Enhancements:
+Delete authItems
+Ajax based web interface for administrating auth items
+
+##########################
+srbac beta
+##########################
+Bug Fixes:
+Fixed udefined variable errors
+Fixed showing all items in the assigned and in the not assigned panels when accessing the 
+assign page for the first time
+Fixed errors when pressing '<<' or '>>' with a wrong selection of items
+Wrong tab display after an assignment
+
+Enhancements:
+You can select if demo data will be created in install
+All assignments calls are made in ajax
+You can set the name of the Authorizer authItem
+You can update the names of the auth Items

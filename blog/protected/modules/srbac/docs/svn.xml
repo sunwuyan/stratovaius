@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<?xml-stylesheet type="text/xsl" href="svn.xsl"?> 
+<DirectMail> 
+<logentry
+   revision="161">
+<author>spyros@valor.gr</author>
+<date>2010-01-14T15:33:56.594646Z</date>
+<msg>Fixes breadcrumbs error (fixes issue 40)</msg>
+</logentry>
+<logentry
+   revision="160">
+<author>spyros@valor.gr</author>
+<date>2010-01-12T14:48:45.822398Z</date>
+<msg>Removed a forgotten echo statement</msg>
+</logentry>
+<logentry
+   revision="159">
+<author>spyros@valor.gr</author>
+<date>2009-12-20T07:49:28.798051Z</date>
+<msg>Fixed tab view cssFile</msg>
+</logentry>
+<logentry
+   revision="158">
+<author>spyros@valor.gr</author>
+<date>2009-12-20T07:48:06.223837Z</date>
+<msg>Fixed publishCss()</msg>
+</logentry>
+<logentry
+   revision="157">
+<author>spyros@valor.gr</author>
+<date>2009-12-20T07:47:12.784905Z</date>
+<msg>Added cssUrl attribute</msg>
+</logentry>
+<logentry
+   revision="156">
+<author>spyros@valor.gr</author>
+<date>2009-12-17T15:47:15.014807Z</date>
+<msg>Changed srbac version</msg>
+</logentry>
+<logentry
+   revision="155">
+<author>spyros@valor.gr</author>
+<date>2009-12-17T15:38:22.160446Z</date>
+<msg>Fix in allowedAcces function</msg>
+</logentry>
+<logentry
+   revision="154">
+<author>spyros@valor.gr</author>
+<date>2009-12-15T15:58:55.918830Z</date>
+<msg>Fix in allowedAcces function</msg>
+</logentry>
+<logentry
+   revision="153">
+<author>spyros@valor.gr</author>
+<date>2009-12-14T05:50:49.427725Z</date>
+<msg></msg>
+</logentry>
+<logentry
+   revision="152">
+<author>robregonm</author>
+<date>2009-12-10T13:45:11.575382Z</date>
+<msg>Updated spanish translation (AlwaysAllowedFile not writable)
+</msg>
+</logentry>
+<logentry
+   revision="151">
+<author>spyros@valor.gr</author>
+<date>2009-12-09T18:36:07.078516Z</date>
+<msg>AlwaysAllowedFile creation fix</msg>
+</logentry>
+<logentry
+   revision="150">
+<author>spyros@valor.gr</author>
+<date>2009-12-09T18:31:02.649508Z</date>
+<msg>AlwaysAllowedFilePath to set the path to the always allowed file (fixes issue 39). Also a check is performed to see if the file is writable or not</msg>
+</logentry>
+<logentry
+   revision="149">
+<author>spyros@valor.gr</author>
+<date>2009-12-09T18:29:54.388574Z</date>
+<msg>AlwaysAllowedFile not writable</msg>
+</logentry>
+<logentry
+   revision="148">
+<author>spyros@valor.gr</author>
+<date>2009-12-09T18:27:51.299118Z</date>
+<msg>Added isAlwaysAllowedFileWritable() function</msg>
+</logentry>
+<logentry
+   revision="147">
+<author>spyros@valor.gr</author>
+<date>2009-12-07T15:20:11.729123Z</date>
+<msg>Fix alwaysAllowed bug when using srbac as submodule (fixes issue 38)</msg>
+</logentry>
+<logentry
+   revision="146">
+<author>spyros@valor.gr</author>
+<date>2009-12-07T08:30:46.907212Z</date>
+<msg>Bug in translate() (fixes issue 37)</msg>
+</logentry>
+<logentry
+   revision="145">
+<author>spyros@valor.gr</author>
+<date>2009-12-05T20:40:34.146151Z</date>
+<msg>Fix bug when using srbac as submodule (fixes issue 36)</msg>
+</logentry>
+<logentry
+   revision="144">
+<author>spyros@valor.gr</author>
+<date>2009-12-04T06:19:42.806131Z</date>
+<msg>Support for table prefix (fixes issue 32)</msg>
+</logentry>
+<logentry
+   revision="143">
+<author>spyros@valor.gr</author>
+<date>2009-12-04T06:16:56.305691Z</date>
+<msg>Fixed manage auth item link (fixes issue 31)</msg>
+</logentry>
+<logentry
+   revision="142">
+<author>spyros@valor.gr</author>
+<date>2009-12-03T10:54:21.823449Z</date>
+<msg>Add css publishing</msg>
+</logentry>
+<logentry
+   revision="141">
+<author>spyros@valor.gr</author>
+<date>2009-12-03T10:53:51.828419Z</date>
+<msg>Add forcePublish in publishCss to force publishing even in ajac Request (if the request is not made from srbac gui)</msg>
+</logentry>
+<logentry
+   revision="140">
+<author>spyros@valor.gr</author>
+<date>2009-12-03T10:38:06.507617Z</date>
+<msg>Fixed a hard coded url</msg>
+</logentry>
+<logentry
+   revision="139">
+<author>spyros@valor.gr</author>
+<date>2009-11-29T12:36:41.045677Z</date>
+<msg>replaced deprecated function in php 5.3 ereg_replace and split with preg_replace and explode (fixes issue 30)</msg>
+</logentry>
+<logentry
+   revision="137">
+<author>robregonm</author>
+<date>2009-11-26T17:31:25.252916Z</date>
+<msg>Updated spanish translation (useAlwaysAllowedGui messages) and fixed some words
+</msg>
+</logentry>
+<logentry
+   revision="136">
+<author>spyros@valor.gr</author>
+<date>2009-11-26T11:42:25.907250Z</date>
+<msg>Fixed safe attributes</msg>
+</logentry>
+<logentry
+   revision="135">
+<author>spyros@valor.gr</author>
+<date>2009-11-26T05:09:46.176332Z</date>
+<msg>When alwaysAllowed GUI is accessed a check is performed to see if srbac is configured to use the gui or not</msg>
+</logentry>
+<logentry
+   revision="134">
+<author>spyros@valor.gr</author>
+<date>2009-11-23T18:18:34.675767Z</date>
+<msg>Add Yii version in default footer</msg>
+</logentry>
+<logentry
+   revision="133">
+<author>spyros@valor.gr</author>
+<date>2009-11-23T18:01:19.731097Z</date>
+<msg>Fix Autodelete items in modules subdirectories</msg>
+</logentry>
+<logentry
+   revision="132">
+<author>spyros@valor.gr</author>
+<date>2009-11-23T04:55:07.603196Z</date>
+<msg>Fixes bug of fix registration of css on every request </msg>
+</logentry>
+<logentry
+   revision="131">
+<author>spyros@valor.gr</author>
+<date>2009-11-23T04:43:10.870954Z</date>
+<msg>Fixes registration of css on every request (fixes issue 28)</msg>
+</logentry>
+<logentry
+   revision="130">
+<author>spyros@valor.gr</author>
+<date>2009-11-19T21:14:27.852962Z</date>
+<msg>Implement access checking in modules subdirectories</msg>
+</logentry>
+<logentry
+   revision="129">
+<author>robregonm</author>
+<date>2009-11-19T13:05:45.267395Z</date>
+<msg>Replaced &lt;? tags by &lt;?php tags in allowed.php
+</msg>
+</logentry>
+<logentry
+   revision="128">
+<author>spyros@valor.gr</author>
+<date>2009-11-19T12:05:16.711377Z</date>
+<msg>Set assign droplists to 100% of width</msg>
+</logentry>
+<logentry
+   revision="127">
+<author>robregonm</author>
+<date>2009-11-18T16:21:02.681429Z</date>
+<msg>Fixed view assign.php (changed &lt;? tag by &lt;?php tag)
+</msg>
+</logentry>
+<logentry
+   revision="126">
+<author>spyros@valor.gr</author>
+<date>2009-11-18T09:09:08.570482Z</date>
+<msg>Fix bug with always allowed tabview</msg>
+</logentry>
+<logentry
+   revision="125">
+<author>spyros@valor.gr</author>
+<date>2009-11-18T08:34:55.729909Z</date>
+<msg>Missing translation marking not using html (closes issue 26)</msg>
+</logentry>
+<logentry
+   revision="124">
+<author>spyros@valor.gr</author>
+<date>2009-11-18T08:32:18.657993Z</date>
+<msg>Auto creation looks inside modules controller path subdirectories (fixes issue 27)</msg>
+</logentry>
+<logentry
+   revision="123">
+<author>spyros@valor.gr</author>
+<date>2009-11-17T20:31:29.620041Z</date>
+<msg>If allowed file does not exist it's automatically created</msg>
+</logentry>
+<logentry
+   revision="122">
+<author>spyros@valor.gr</author>
+<date>2009-11-17T20:21:45.861946Z</date>
+<msg>Allowed.php not needed in SVN</msg>
+</logentry>
+<logentry
+   revision="121">
+<author>spyros@valor.gr</author>
+<date>2009-11-17T20:06:13.935509Z</date>
+<msg>Autocreate scans in subdirectories of applications controller path (unfinished) </msg>
+</logentry>
+<logentry
+   revision="120">
+<author>robregonm</author>
+<date>2009-11-17T15:28:57.655421Z</date>
+<msg>Spanish translation updated (always allowed)
+</msg>
+</logentry>
+<logentry
+   revision="119">
+<author>spyros@valor.gr</author>
+<date>2009-11-17T13:36:45.638012Z</date>
+<msg>Fixed strange bug with allow Tabview conflict with Assign tabview</msg>
+</logentry>
+<logentry
+   revision="118">
+<author>spyros@valor.gr</author>
+<date>2009-11-16T06:35:46.888489Z</date>
+<msg>Added display of the items saved in alwaysAllowed file</msg>
+</logentry>
+<logentry
+   revision="117">
+<author>spyros@valor.gr</author>
+<date>2009-11-16T05:54:35.550876Z</date>
+<msg>Always allowed GUI fixes</msg>
+</logentry>
+<logentry
+   revision="116">
+<author>spyros@valor.gr</author>
+<date>2009-11-16T05:33:37.417074Z</date>
+<msg>Add always allowed icons</msg>
+</logentry>
+<logentry
+   revision="115">
+<author>spyros@valor.gr</author>
+<date>2009-11-16T05:31:28.447116Z</date>
+<msg>Fixed vertTab width to 90%</msg>
+</logentry>
+<logentry
+   revision="114">
+<author>spyros@valor.gr</author>
+<date>2009-11-16T02:33:46.540414Z</date>
+<msg>GUI for editing the alwaysAllowed list (fixes issue 23)</msg>
+</logentry>
+<logentry
+   revision="113">
+<author>spyros@valor.gr</author>
+<date>2009-11-15T18:59:26.167529Z</date>
+<msg>Added Vertical tab styles</msg>
+</logentry>
+<logentry
+   revision="112">
+<author>spyros@valor.gr</author>
+<date>2009-11-14T14:33:13.506975Z</date>
+<msg>Fixed publishCss not publishing css images</msg>
+</logentry>
+<logentry
+   revision="111">
+<author>spyros@valor.gr</author>
+<date>2009-11-14T12:26:46.471387Z</date>
+<msg>Added onUnauthorizedAccess method in SBaseController (fixes issue 24)</msg>
+</logentry>
+<logentry
+   revision="110">
+<author>spyros@valor.gr</author>
+<date>2009-11-14T11:52:12.565747Z</date>
+<msg>Roles and tasks in assign view are sorted (fixes issue 22)</msg>
+</logentry>
+<logentry
+   revision="109">
+<author>spyros@valor.gr</author>
+<date>2009-11-14T11:43:40.186589Z</date>
+<msg>Removed trailing ?&gt; (fixes issue 25)</msg>
+</logentry>
+<logentry
+   revision="108">
+<author>spyros@valor.gr</author>
+<date>2009-11-13T05:55:51.332587Z</date>
+<msg>Fixed scanning of modules when url formating is used (fixes issue 20)</msg>
+</logentry>
+<logentry
+   revision="107">
+<author>spyros@valor.gr</author>
+<date>2009-11-13T05:43:19.566929Z</date>
+<msg>Fixed Error in css when installing, and simplified publishCss() (fixes issue 19)</msg>
+</logentry>
+<logentry
+   revision="106">
+<author>spyros@valor.gr</author>
+<date>2009-11-12T20:44:02.175991Z</date>
+<msg>alwaysAllowed attribute can also accept an alias to a file that returns an array(fixes issue 21)</msg>
+</logentry>
+<logentry
+   revision="105">
+<author>spyros@valor.gr</author>
+<date>2009-11-11T05:16:15.694924Z</date>
+<msg>Fixed clever assigning route bug</msg>
+</logentry>
+<logentry
+   revision="104">
+<author>spyros@valor.gr</author>
+<date>2009-11-11T04:46:06.260751Z</date>
+<msg>Sort users alphabetically</msg>
+</logentry>
+<logentry
+   revision="103">
+<author>spyros@valor.gr</author>
+<date>2009-11-11T04:42:38.585810Z</date>
+<msg>Fixed undefined index name</msg>
+</logentry>
+<logentry
+   revision="102">
+<author>spyros@valor.gr</author>
+<date>2009-11-10T18:52:01.403783Z</date>
+<msg>Added header, footer, showHeader, showFooter attributes so the whole srbac interface can be wrapped inside a custom container (fixes issue 16)</msg>
+</logentry>
+<logentry
+   revision="101">
+<author>spyros@valor.gr</author>
+<date>2009-11-10T17:35:08.298217Z</date>
+<msg>Added help.png icons</msg>
+</logentry>
+<logentry
+   revision="100">
+<author>spyros@valor.gr</author>
+<date>2009-11-10T17:27:29.981335Z</date>
+<msg>Fix isInstalled() to use AuthManager DB instead of app db</msg>
+</logentry>
+<logentry
+   revision="97">
+<author>spyros@valor.gr</author>
+<date>2009-11-10T04:41:46.862101Z</date>
+<msg>Changed Yii supported version to 1.1.0</msg>
+</logentry>
+<logentry
+   revision="96">
+<author>spyros@valor.gr</author>
+<date>2009-11-09T13:34:11.121060Z</date>
+<msg>Fix isInstalled() bug</msg>
+</logentry>
+<logentry
+   revision="95">
+<author>robregonm</author>
+<date>2009-11-09T13:04:27.710894Z</date>
+<msg>Spanish translation updated - 1.1 (Help)
+</msg>
+</logentry>
+<logentry
+   revision="94">
+<author>spyros@valor.gr</author>
+<date>2009-11-09T07:35:33.594542Z</date>
+<msg>alwaysAllowed and userActions can now be an array or a coma delimeted string</msg>
+</logentry>
+<logentry
+   revision="93">
+<author>spyros@valor.gr</author>
+<date>2009-11-09T07:02:03.630663Z</date>
+<msg>Added help icon that toggles the help text on install page</msg>
+</logentry>
+<logentry
+   revision="92">
+<author>spyros@valor.gr</author>
+<date>2009-11-08T18:17:18.342600Z</date>
+<msg>Add srbac configuration checking before the installing</msg>
+</logentry>
+<logentry
+   revision="91">
+<author>robregonm</author>
+<date>2009-11-08T13:25:42.908018Z</date>
+<msg>Updated spanish translation (1.1) - Clever assigning
+</msg>
+</logentry>
+<logentry
+   revision="90">
+<author>spyros@valor.gr</author>
+<date>2009-11-08T12:33:10.820937Z</date>
+<msg>Add instal error and no install error icons</msg>
+</logentry>
+<logentry
+   revision="89">
+<author>spyros@valor.gr</author>
+<date>2009-11-08T12:00:33.212082Z</date>
+<msg>Start Adding configuration checking on install</msg>
+</logentry>
+<logentry
+   revision="88">
+<author>spyros@valor.gr</author>
+<date>2009-11-08T12:00:04.425652Z</date>
+<msg>Fixed getAttributes()</msg>
+</logentry>
+<logentry
+   revision="87">
+<author>spyros@valor.gr</author>
+<date>2009-11-08T11:36:04.885474Z</date>
+<msg>Added method getAttributes to get all srbac attributes for checking when installing</msg>
+</logentry>
+<logentry
+   revision="86">
+<author>spyros@valor.gr</author>
+<date>2009-11-08T10:45:47.582988Z</date>
+<msg>Added srbac configuration checking before install</msg>
+</logentry>
+<logentry
+   revision="85">
+<author>spyros@valor.gr</author>
+<date>2009-11-08T10:45:11.980227Z</date>
+<msg>Added styles for reporting errors in srbac configuration before the install</msg>
+</logentry>
+<logentry
+   revision="84">
+<author>spyros@valor.gr</author>
+<date>2009-11-08T10:44:27.895627Z</date>
+<msg>Added isCssPublished, isImagesPublished methods for checking when installing srbac.Also imagesPath now accepts path alias instead of url</msg>
+</logentry>
+<logentry
+   revision="83">
+<author>spyros@valor.gr</author>
+<date>2009-11-07T16:12:11.139704Z</date>
+<msg>Added getters and setters for srbac attributes (fixes issue 18)</msg>
+</logentry>
+<logentry
+   revision="82">
+<author>spyros@valor.gr</author>
+<date>2009-11-06T17:22:48.586714Z</date>
+<msg>Using different db connections for CDbAuthManager and main application (fixes issue 17)</msg>
+</logentry>
+<logentry
+   revision="81">
+<author>spyros@valor.gr</author>
+<date>2009-11-06T12:09:01.658714Z</date>
+<msg>Added srbac method getVersion()</msg>
+</logentry>
+<logentry
+   revision="80">
+<author>spyros@valor.gr</author>
+<date>2009-11-06T12:04:30.142953Z</date>
+<msg>Fixed controller action scanning (ignore multiple spaces between public function actionXXX)</msg>
+</logentry>
+<logentry
+   revision="79">
+<author>spyros@valor.gr</author>
+<date>2009-11-06T10:21:06.311885Z</date>
+<msg>Update Greek translation</msg>
+</logentry>
+<logentry
+   revision="78">
+<author>spyros@valor.gr</author>
+<date>2009-11-06T07:52:07.170138Z</date>
+<msg>Add Clever Assigning when assigning operations to tasks (closes issue 15)</msg>
+</logentry>
+<logentry
+   revision="77">
+<author>spyros@valor.gr</author>
+<date>2009-11-05T05:22:26.409924Z</date>
+<msg>Fixed process-working.gif (ajax loader) so it is a transparent gif</msg>
+</logentry>
+<logentry
+   revision="76">
+<author>spyros@valor.gr</author>
+<date>2009-11-05T05:12:47.049464Z</date>
+<msg>Fixed checkYiiVersion() , revert translate() because Yii::t() for modules is dropped in 1.1b</msg>
+</logentry>
+<logentry
+   revision="75">
+<author>spyros@valor.gr</author>
+<date>2009-11-04T12:10:19.793426Z</date>
+<msg>Fixed checkYiiVersion(), translate() and undefined index in assigning roles/tasks</msg>
+</logentry>
+<logentry
+   revision="74">
+<author>spyros@valor.gr</author>
+<date>2009-11-04T11:59:40.371260Z</date>
+<msg>update files for Yii 1.1 compatibility (fixes issue 5)</msg>
+</logentry>
+<logentry
+   revision="71">
+<author>spyros@valor.gr</author>
+<date>2009-10-28T18:14:39.303019Z</date>
+<msg>Refactoring</msg>
+</logentry>
+<logentry
+   revision="70">
+<author>robregonm</author>
+<date>2009-10-28T11:56:29.558621Z</date>
+<msg>Added spanish translation texts about checking Yii version when installing
+</msg>
+</logentry>
+<logentry
+   revision="69">
+<author>spyros@valor.gr</author>
+<date>2009-10-28T11:45:59.539391Z</date>
+<msg>Check version of Yii before installing the module</msg>
+</logentry>
+<logentry
+   revision="68">
+<author>spyros@valor.gr</author>
+<date>2009-10-28T11:45:25.880667Z</date>
+<msg>Added translations texts about checking Yii version when installing too</msg>
+</logentry>
+<logentry
+   revision="67">
+<author>spyros@valor.gr</author>
+<date>2009-10-28T11:43:25.560603Z</date>
+<msg>Added translations texts about checking Yii version when installing</msg>
+</logentry>
+<logentry
+   revision="66">
+<author>spyros@valor.gr</author>
+<date>2009-10-28T11:35:48.042401Z</date>
+<msg>When srbac is not installed every request is redirected to srbac install page (Fixes issue 14). Also more detailed information adout srbac configuration is shown.</msg>
+</logentry>
+<logentry
+   revision="65">
+<author>spyros@valor.gr</author>
+<date>2009-10-28T11:33:22.645161Z</date>
+<msg>Added checkYiiVersion($version) method to check a given version in 1.0 branch against current running Yii version</msg>
+</logentry>
+<logentry
+   revision="64">
+<author>spyros@valor.gr</author>
+<date>2009-10-28T11:32:03.941288Z</date>
+<msg>Added attribute $_yiiSupportedVersion to determine if Yii version supports srvac module</msg>
+</logentry>
+<logentry
+   revision="63">
+<author>spyros@valor.gr</author>
+<date>2009-10-28T10:34:57.600176Z</date>
+<msg>Changed Yii::t('srbac.'.$source,$text) to Yii::t('srbacModule.'.$source,$text) to overide a possible bug in CPhpMessageSource.php</msg>
+</logentry>
+<logentry
+   revision="62">
+<author>spyros@valor.gr</author>
+<date>2009-10-28T09:57:47.384006Z</date>
+<msg>Added iconText attribute in example srbac configuration</msg>
+</logentry>
+<logentry
+   revision="61">
+<author>spyros@valor.gr</author>
+<date>2009-10-28T09:49:32.488804Z</date>
+<msg>Assign listboxes options in alphabetical order13 (Fixes issue 13)</msg>
+</logentry>
+<logentry
+   revision="60">
+<author>robregonm</author>
+<date>2009-10-27T19:29:29.335897Z</date>
+<msg>Add php doc comments and file info to spanish translation (fix)
+</msg>
+</logentry>
+<logentry
+   revision="59">
+<author>robregonm</author>
+<date>2009-10-27T19:26:18.563600Z</date>
+<msg>Add php doc comments and file info to spanish translation
+</msg>
+</logentry>
+<logentry
+   revision="58">
+<author>robregonm</author>
+<date>2009-10-27T19:16:24.524680Z</date>
+<msg>Updated spanish translation 1.0.3
+</msg>
+</logentry>
+<logentry
+   revision="57">
+<author>spyros@valor.gr</author>
+<date>2009-10-27T19:11:57.095097Z</date>
+<msg>Add php doc comments and file info</msg>
+</logentry>
+<logentry
+   revision="56">
+<author>spyros@valor.gr</author>
+<date>2009-10-27T18:06:04.358563Z</date>
+<msg>Add php doc comments</msg>
+</logentry>
+<logentry
+   revision="55">
+<author>spyros@valor.gr</author>
+<date>2009-10-27T18:04:59.500749Z</date>
+<msg>Use isInstalled() method to check for installation of srbac</msg>
+</logentry>
+<logentry
+   revision="54">
+<author>spyros@valor.gr</author>
+<date>2009-10-27T18:03:31.706607Z</date>
+<msg>Set error message in installation as a variable</msg>
+</logentry>
+<logentry
+   revision="53">
+<author>spyros@valor.gr</author>
+<date>2009-10-27T18:02:49.709851Z</date>
+<msg>Set error message as a variable instead of static text</msg>
+</logentry>
+<logentry
+   revision="52">
+<author>spyros@valor.gr</author>
+<date>2009-10-27T18:01:51.148773Z</date>
+<msg>Add a style for the icon text links</msg>
+</logentry>
+<logentry
+   revision="51">
+<author>spyros@valor.gr</author>
+<date>2009-10-27T17:49:56.118208Z</date>
+<msg>Add a translation text about installing in not debug mode</msg>
+</logentry>
+<logentry
+   revision="50">
+<author>spyros@valor.gr</author>
+<date>2009-10-27T09:22:03.925372Z</date>
+<msg>Small fix in css</msg>
+</logentry>
+<logentry
+   revision="49">
+<author>spyros@valor.gr</author>
+<date>2009-10-27T09:19:48.995967Z</date>
+<msg>Added iconText attribute to show or not text next to the menu icons</msg>
+</logentry>
+<logentry
+   revision="48">
+<author>spyros@valor.gr</author>
+<date>2009-10-27T09:03:27.286350Z</date>
+<msg>Add iconSet div for the top menu bar</msg>
+</logentry>
+<logentry
+   revision="47">
+<author>spyros@valor.gr</author>
+<date>2009-10-27T09:02:24.254022Z</date>
+<msg>add IconSet class</msg>
+</logentry>
+<logentry
+   revision="46">
+<author>robregonm</author>
+<date>2009-10-26T10:50:09.001774Z</date>
+<msg>Updated spanish translation (1.0.3_beta_r45)
+</msg>
+</logentry>
+<logentry
+   revision="45">
+<author>spyros@valor.gr</author>
+<date>2009-10-26T05:52:07.819810Z</date>
+<msg>New tranlsation text</msg>
+</logentry>
+<logentry
+   revision="44">
+<author>spyros@valor.gr</author>
+<date>2009-10-26T05:44:24.193650Z</date>
+<msg>Auth items are not autocreated for actions that are always allowed</msg>
+</logentry>
+<logentry
+   revision="43">
+<author>spyros@valor.gr</author>
+<date>2009-10-26T05:33:49.994053Z</date>
+<msg>changed allowedAccess() to protected so it can be inherited</msg>
+</logentry>
+<logentry
+   revision="42">
+<author>spyros@valor.gr</author>
+<date>2009-10-26T05:27:46.787796Z</date>
+<msg>Fixed some undefined variables</msg>
+</logentry>
+<logentry
+   revision="41">
+<author>spyros@valor.gr</author>
+<date>2009-10-26T05:27:18.624233Z</date>
+<msg>Set default css to srbac.css</msg>
+</logentry>
+<logentry
+   revision="40">
+<author>spyros@valor.gr</author>
+<date>2009-10-26T05:12:12.243132Z</date>
+<msg>Access always denied to guests, except if page is in alwaysAllowed array</msg>
+</logentry>
+<logentry
+   revision="39">
+<author>spyros@valor.gr</author>
+<date>2009-10-26T05:03:26.369944Z</date>
+<msg>Set custom images path relative to webroot </msg>
+</logentry>
+<logentry
+   revision="38">
+<author>spyros@valor.gr</author>
+<date>2009-10-25T13:26:17.432555Z</date>
+<msg>import Helper class on init</msg>
+</logentry>
+<logentry
+   revision="37">
+<author>spyros@valor.gr</author>
+<date>2009-10-25T13:19:48.438859Z</date>
+<msg>Added php docs to functions</msg>
+</logentry>
+<logentry
+   revision="36">
+<author>spyros@valor.gr</author>
+<date>2009-10-25T13:18:32.717391Z</date>
+<msg>Fixed check config table class to srbacDataGrid</msg>
+</logentry>
+<logentry
+   revision="35">
+<author>spyros@valor.gr</author>
+<date>2009-10-25T13:12:45.002370Z</date>
+<msg>Changed translation function to Helper::translate()</msg>
+</logentry>
+<logentry
+   revision="34">
+<author>spyros@valor.gr</author>
+<date>2009-10-25T12:50:11.210435Z</date>
+<msg>Add authItem-&gt;description as title in authItem link, so hovering over the item will show it's description</msg>
+</logentry>
+<logentry
+   revision="33">
+<author>spyros@valor.gr</author>
+<date>2009-10-25T08:56:07.399615Z</date>
+<msg>Better handling of images and icon packs</msg>
+</logentry>
+<logentry
+   revision="32">
+<author>spyros@valor.gr</author>
+<date>2009-10-24T18:39:23.488406Z</date>
+<msg>refactored $this-&gt;module-&gt;tr-&gt;translate() to Helper::translate() to manage translations in  &lt;1.0.10 and 1.0.10 version</msg>
+</logentry>
+<logentry
+   revision="31">
+<author>spyros@valor.gr</author>
+<date>2009-10-24T18:35:43.466503Z</date>
+<msg>Added translate($source, $text) to manage translations in  &lt;1.0.10 and 1.0.10 version</msg>
+</logentry>
+<logentry
+   revision="30">
+<author>spyros@valor.gr</author>
+<date>2009-10-24T12:02:32.759912Z</date>
+<msg>Added noia icons pack</msg>
+</logentry>
+<logentry
+   revision="29">
+<author>spyros@valor.gr</author>
+<date>2009-10-24T11:16:32.936989Z</date>
+<msg>Fix</msg>
+</logentry>
+<logentry
+   revision="28">
+<author>spyros@valor.gr</author>
+<date>2009-10-24T11:12:04.397489Z</date>
+<msg>new icons pack (Thanks to 'idle sign'). </msg>
+</logentry>
+<logentry
+   revision="27">
+<author>spyros@valor.gr</author>
+<date>2009-10-24T11:07:33.195953Z</date>
+<msg>Added new icons, add a control center top bar and fixed an IE bug (Thanks to 'idle sign'). </msg>
+</logentry>
+<logentry
+   revision="26">
+<author>spyros@valor.gr</author>
+<date>2009-10-24T11:06:03.581057Z</date>
+<msg>Added new styles and new loader (thanks to 'idle sign')</msg>
+</logentry>
+<logentry
+   revision="25">
+<author>spyros@valor.gr</author>
+<date>2009-10-24T11:05:16.551323Z</date>
+<msg>Removed $images variable passed to views</msg>
+</logentry>
+<logentry
+   revision="24">
+<author>spyros@valor.gr</author>
+<date>2009-10-24T11:04:31.388500Z</date>
+<msg>Removed getImages() function. Images now are managed through the imagesPack attribute</msg>
+</logentry>
+<logentry
+   revision="23">
+<author>spyros@valor.gr</author>
+<date>2009-10-24T11:03:12.051926Z</date>
+<msg>Added imagesPack attribute.User can choose which pack of images to use for the srbac icons</msg>
+</logentry>
+<logentry
+   revision="22">
+<author>robregonm</author>
+<date>2009-10-22T20:21:34.972620Z</date>
+<msg>Fixed spanish translation
+</msg>
+</logentry>
+<logentry
+   revision="21">
+<author>robregonm</author>
+<date>2009-10-22T12:05:22.901943Z</date>
+<msg>Update of spanish messages.
+</msg>
+</logentry>
+<logentry
+   revision="20">
+<author>spyros@valor.gr</author>
+<date>2009-10-22T09:51:03.912847Z</date>
+<msg>Removed setting of layout in beforeControllerAction</msg>
+</logentry>
+<logentry
+   revision="19">
+<author>spyros@valor.gr</author>
+<date>2009-10-21T17:26:59.032392Z</date>
+<msg>Added a default unauthorized view in case the user has not defined one</msg>
+</logentry>
+<logentry
+   revision="18">
+<author>spyros@valor.gr</author>
+<date>2009-10-20T06:56:08.069425Z</date>
+<msg>Auto creating of modules controllers actions</msg>
+</logentry>
+<logentry
+   revision="17">
+<author>spyros@valor.gr</author>
+<date>2009-10-20T04:55:55.811141Z</date>
+<msg>Auto create checks if task exist and displays them or not in the create tasks list</msg>
+</logentry>
+<logentry
+   revision="16">
+<author>spyros@valor.gr</author>
+<date>2009-10-17T17:32:18.258223Z</date>
+<msg>Changed dataGrid class to srbacDataGrid so it won't conflict with Yii dataGrid class</msg>
+</logentry>
+<logentry
+   revision="15">
+<author>spyros@valor.gr</author>
+<date>2009-10-17T17:01:49.852851Z</date>
+<msg>custom srbac css can be placed not only in srbac/css directory but also in default application/css directory</msg>
+</logentry>
+<logentry
+   revision="14">
+<author>spyros@valor.gr</author>
+<date>2009-10-17T11:42:21.071405Z</date>
+<msg>Added srbac attribute imagesPath to set the path to the srbac icons (create, delete, admin etc)</msg>
+</logentry>
+<logentry
+   revision="13">
+<author>robregonm</author>
+<date>2009-10-16T16:51:54.794776Z</date>
+<msg>No longer needed. This file was replaced by AuthitemController.php</msg>
+</logentry>
+<logentry
+   revision="12">
+<author>spyros@valor.gr</author>
+<date>2009-10-16T14:07:34.350285Z</date>
+<msg>Renamed AuthItemController to AuthitemController</msg>
+</logentry>
+<logentry
+   revision="11">
+<author>spyros@valor.gr</author>
+<date>2009-10-16T14:06:12.449862Z</date>
+<msg>Removed authitem from url where it wasn't needed as it is the current controller</msg>
+</logentry>
+<logentry
+   revision="10">
+<author>spyros@valor.gr</author>
+<date>2009-10-16T13:59:22.857859Z</date>
+<msg>Removed authitem from url where it wasn't needed as it is the current controller</msg>
+</logentry>
+<logentry
+   revision="9">
+<author>spyros@valor.gr</author>
+<date>2009-10-16T04:02:31.595103Z</date>
+<msg>Fixed short php tags</msg>
+</logentry>
+<logentry
+   revision="8">
+<author>spyros@valor.gr</author>
+<date>2009-10-16T03:57:59.598020Z</date>
+<msg>Added attribute listBoxNumberOfLines to control the size of the list boxes in the Assign page</msg>
+</logentry>
+<logentry
+   revision="7">
+<author>spyros@valor.gr</author>
+<date>2009-10-16T03:45:47.417367Z</date>
+<msg>Removed parrent::beforeAction call</msg>
+</logentry>
+<logentry
+   revision="6">
+<author>robregonm</author>
+<date>2009-10-15T22:13:52.371648Z</date>
+<msg>Autoversioning commit:  a non-deltaV client made a change to
+/trunk/protected/modules/srbac/messages/es/srbac.php</msg>
+</logentry>
+<logentry
+   revision="5">
+<author>robregonm</author>
+<date>2009-10-15T22:10:21.494367Z</date>
+<msg>Autoversioning commit:  a non-deltaV client made a change to
+/trunk/protected/modules/srbac/messages/es/srbac.php</msg>
+</logentry>
+<logentry
+   revision="4">
+<author>spyros@valor.gr</author>
+<date>2009-10-15T04:11:15.141272Z</date>
+<msg>Removed safe rule</msg>
+</logentry>
+<logentry
+   revision="3">
+<author>spyros@valor.gr</author>
+<date>2009-10-14T07:15:14.372338Z</date>
+<msg>Added some doc comments</msg>
+</logentry>
+<logentry
+   revision="2">
+<author>spyros@valor.gr</author>
+<date>2009-10-14T07:04:02.123049Z</date>
+<msg>Initial Import</msg>
+</logentry>
+<logentry
+   revision="1">
+<date>2009-10-14T06:29:59.220861Z</date>
+<msg>Initial directory structure.</msg>
+</logentry>
+</DirectMail> 
