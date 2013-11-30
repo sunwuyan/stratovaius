@@ -1,0 +1,44 @@
+2013/11/30 16:59:39 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/home/jinshan/Documents/stratovaius/blog/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /home/jinshan/Documents/stratovaius/yii/framework/web/CAssetManager.php:116
+Stack trace:
+#0 /home/jinshan/Documents/stratovaius/yii/framework/web/CAssetManager.php(101): CAssetManager->setBasePath('/home/jinshan/D...')
+#1 /home/jinshan/Documents/stratovaius/yii/framework/web/CAssetManager.php(219): CAssetManager->getBasePath()
+#2 /home/jinshan/Documents/stratovaius/blog/protected/modules/srbac/components/Helper.php(491): CAssetManager->publish('/home/jinshan/D...')
+#3 /home/jinshan/Documents/stratovaius/blog/protected/modules/srbac/SrbacModule.php(104): Helper::publishCss('srbac.css')
+#4 /home/jinshan/Documents/stratovaius/yii/framework/base/CModule.php(91): SrbacModule->init()
+#5 /home/jinshan/Documents/stratovaius/yii/framework/YiiBase.php(218): CModule->__construct('srbac', NULL, Array)
+#6 /home/jinshan/Documents/stratovaius/yii/framework/base/CModule.php(283): YiiBase::createComponent('srbac.SrbacModu...', 'srbac', NULL, Array)
+#7 /home/jinshan/Documents/stratovaius/blog/protected/modules/srbac/components/Helper.php(338): CModule->getModule('srbac')
+#8 /home/jinshan/Documents/stratovaius/blog/protected/modules/srbac/controllers/SBaseController.php(70): Helper::findModule('srbac')
+#9 /home/jinshan/Documents/stratovaius/blog/protected/modules/srbac/controllers/SBaseController.php(43): SBaseController->allowedAccess()
+#10 /home/jinshan/Documents/stratovaius/yii/framework/web/CController.php(313): SBaseController->beforeAction(Object(CInlineAction))
+#11 /home/jinshan/Documents/stratovaius/yii/framework/web/CController.php(289): CController->runAction(Object(CInlineAction))
+#12 /home/jinshan/Documents/stratovaius/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /home/jinshan/Documents/stratovaius/yii/framework/web/CWebApplication.php(281): CController->run('')
+#14 /home/jinshan/Documents/stratovaius/yii/framework/web/CWebApplication.php(139): CWebApplication->runController('')
+#15 /home/jinshan/Documents/stratovaius/yii/framework/base/CApplication.php(200): CWebApplication->processRequest()
+#16 /home/jinshan/Documents/stratovaius/blog/index.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/blog/
+---
+2013/11/30 16:59:42 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/home/jinshan/Documents/stratovaius/blog/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /home/jinshan/Documents/stratovaius/yii/framework/web/CAssetManager.php:116
+Stack trace:
+#0 /home/jinshan/Documents/stratovaius/yii/framework/web/CAssetManager.php(101): CAssetManager->setBasePath('/home/jinshan/D...')
+#1 /home/jinshan/Documents/stratovaius/yii/framework/web/CAssetManager.php(219): CAssetManager->getBasePath()
+#2 /home/jinshan/Documents/stratovaius/blog/protected/modules/srbac/components/Helper.php(491): CAssetManager->publish('/home/jinshan/D...')
+#3 /home/jinshan/Documents/stratovaius/blog/protected/modules/srbac/SrbacModule.php(104): Helper::publishCss('srbac.css')
+#4 /home/jinshan/Documents/stratovaius/yii/framework/base/CModule.php(91): SrbacModule->init()
+#5 /home/jinshan/Documents/stratovaius/yii/framework/YiiBase.php(218): CModule->__construct('srbac', NULL, Array)
+#6 /home/jinshan/Documents/stratovaius/yii/framework/base/CModule.php(283): YiiBase::createComponent('srbac.SrbacModu...', 'srbac', NULL, Array)
+#7 /home/jinshan/Documents/stratovaius/blog/protected/modules/srbac/components/Helper.php(338): CModule->getModule('srbac')
+#8 /home/jinshan/Documents/stratovaius/blog/protected/modules/srbac/controllers/SBaseController.php(70): Helper::findModule('srbac')
+#9 /home/jinshan/Documents/stratovaius/blog/protected/modules/srbac/controllers/SBaseController.php(43): SBaseController->allowedAccess()
+#10 /home/jinshan/Documents/stratovaius/yii/framework/web/CController.php(313): SBaseController->beforeAction(Object(CInlineAction))
+#11 /home/jinshan/Documents/stratovaius/yii/framework/web/CController.php(289): CController->runAction(Object(CInlineAction))
+#12 /home/jinshan/Documents/stratovaius/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /home/jinshan/Documents/stratovaius/yii/framework/web/CWebApplication.php(281): CController->run('')
+#14 /home/jinshan/Documents/stratovaius/yii/framework/web/CWebApplication.php(139): CWebApplication->runController('')
+#15 /home/jinshan/Documents/stratovaius/yii/framework/base/CApplication.php(200): CWebApplication->processRequest()
+#16 /home/jinshan/Documents/stratovaius/blog/index.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/blog/
+---
