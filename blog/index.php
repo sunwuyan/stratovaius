@@ -1,7 +1,7 @@
 <?php
 //sqlite3 C:\wamp\www\blog\protected\data\blog.db
 date_default_timezone_set('PRC');
-
+//echo "hello world!";
 
 function p($var){
 	CDebug::dump($var);
