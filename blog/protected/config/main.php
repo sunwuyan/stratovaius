@@ -103,16 +103,17 @@ return array(
 		),
 
         'urlManager'=>array(
-		/*
         	'urlFormat'=>'path',
-			'urlSuffix'=>'.html',
-			'showScriptName'=>false,
-			
+		//'urlSuffix'=>'.html',
+		//'showScriptName'=>false,	
         	'rules'=>array(
+			'gii'=>'gii',
+            		'gii/<controller:\w+>'=>'gii/<controller>',
+            		'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
+/*
         		'<controller:\w+>/<action:\w+>/*'=>'<controller>/<action>',
         		'<module:\w+>/<controller:\w+>/<action:\w+>/*'=>'<module>/<controller>/<action>',
-			),	
-			*/
+		*/	),	
         ),
     
 		'log'=>array(
