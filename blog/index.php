@@ -7,7 +7,7 @@ function p($var){
 	CDebug::dump($var);
 }
 // change the following paths if necessary
-$yii=dirname(__FILE__).'/../yii/framework/yii.php';
+$yii=dirname(__FILE__).'/../yii3/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
 
 

@@ -204,6 +204,7 @@ class GiiModule extends CWebModule
 	{
 		$generators=array();
 		$n=count($this->generatorPaths);
+p($this->generatorPaths);
 		for($i=$n-1;$i>=0;--$i)
 		{
 			$alias=$this->generatorPaths[$i];
