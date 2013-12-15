@@ -78,9 +78,11 @@ return array(
 			//'connectionString' => 'sqlite:C:\Music\testdrive.db',
 			'tablePrefix' => 'tbl_',
 		),
+/*
 		'cache'=>array(
             	      'class'=>'ext.yiiredis.ARedisCache',
 		 ),
+*/
 		// uncomment the following to use a MySQL database
 		/*
 		'db'=>array(
