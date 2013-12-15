@@ -204,15 +204,38 @@ class GiiModule extends CWebModule
 	{
 		$generators=array();
 		$n=count($this->generatorPaths);
-p($this->generatorPaths);
+#p($this->generatorPaths);
+/*
+array(2) {
+  [0] => string(15) "application.gii"
+  [1] => string(14) "gii.generators"
+}
+*/      
 		for($i=$n-1;$i>=0;--$i)
 		{
 			$alias=$this->generatorPaths[$i];
 			$path=Yii::getPathOfAlias($alias);
+#p($path);
+/*
+string(60) "/Library/WebServer/Documents/y/yii3/framework/gii/generators"
+string(49) "/Library/WebServer/Documents/y/blog/protected/gii"
+*/
 			if($path===false || !is_dir($path))
 				continue;
 
 			$names=scandir($path);
+#p($names);
+/*
+array(7) {
+  [0] => string(1) "."
+  [1] => string(2) ".."
+  [2] => string(10) "controller"
+  [3] => string(4) "crud"
+  [4] => string(4) "form"
+  [5] => string(5) "model"
+  [6] => string(6) "module"
+}
+*/
 			foreach($names as $name)
 			{
 				if($name[0]!=='.' && is_dir($path.'/'.$name))
@@ -238,6 +261,41 @@ p($this->generatorPaths);
 				}
 			}
 		}
+#p($generators);
+/*
+array(5) {
+  ["controller"] => array(2) {
+    ["class"] => string(45) "gii.generators.controller.ControllerGenerator"
+    ["templates"] => array(1) {
+      ["default"] => string(89) "/Library/WebServer/Documents/y/yii3/framework/gii/generators/controller/templates/default"
+    }
+  }
+  ["crud"] => array(2) {
+    ["class"] => string(33) "gii.generators.crud.CrudGenerator"
+    ["templates"] => array(1) {
+      ["default"] => string(83) "/Library/WebServer/Documents/y/yii3/framework/gii/generators/crud/templates/default"
+    }
+  }
+  ["form"] => array(2) {
+    ["class"] => string(33) "gii.generators.form.FormGenerator"
+    ["templates"] => array(1) {
+      ["default"] => string(83) "/Library/WebServer/Documents/y/yii3/framework/gii/generators/form/templates/default"
+    }
+  }
+  ["model"] => array(2) {
+    ["class"] => string(35) "gii.generators.model.ModelGenerator"
+    ["templates"] => array(1) {
+      ["default"] => string(84) "/Library/WebServer/Documents/y/yii3/framework/gii/generators/model/templates/default"
+    }
+  }
+  ["module"] => array(2) {
+    ["class"] => string(37) "gii.generators.module.ModuleGenerator"
+    ["templates"] => array(1) {
+      ["default"] => string(85) "/Library/WebServer/Documents/y/yii3/framework/gii/generators/module/templates/default"
+    }
+  }
+}
+*/
 		return $generators;
 	}
 }
