@@ -1,7 +1,6 @@
 <?php
- $client = new soapclient("http://central.dtvds.com/index.php?r=central/quote");
+    require_once 'phprunconfig.php';
+    $client=new SoapClient('http://localhost/y/testdriver/index.php?r=site/quote');
+    echo $client->getPrice('10.68.184.198'.'&'.'2014-03-08 10:00:00'.'&'.'2014-03-08 13:00:00');
 
-       if($client)
-        {
-            var_dump($client->verify_subscriber('1111'));
-        }
+?>
