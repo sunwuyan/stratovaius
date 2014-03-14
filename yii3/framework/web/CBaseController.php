@@ -114,6 +114,7 @@ abstract class CBaseController extends CComponent
 	 */
 	public function renderInternal($_viewFile_,$_data_=null,$_return_=false)
 	{
+//        p($_viewFile_);
 		// we use special variable names here to avoid conflict when extracting data
 		if(is_array($_data_))
 			extract($_data_,EXTR_PREFIX_SAME,'data');

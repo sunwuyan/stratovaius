@@ -1,24 +1,7 @@
 <?php
-require_once 'yii.php';
+require_once './yii/framework/utils/CDebug.php';
+date_default_timezone_set('PRC');
 function p($var){
 	CDebug::dump($var);
 }
-class Post extends CActveRecord 
-{
-    public $title='please enter a title';
-    public static function model($className=__CLSSS__)
-    {
-        return parent::model($className);
-    }
-    public function tableName()
-    {
-        return "{{post}}";
-    } 
-
-    public function primaryKey()
-    {
-        return 'id';
-    }
-
-    
-}
+p(strftime("%Y-%m-%d %H:%M:%S"),1393836303371);
