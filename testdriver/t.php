@@ -20,7 +20,7 @@
     }
     
     if(empty($_GET)){
-        p("参数错误！");
+        echo "参数错误！";
         die();
     }
     $ip=$_GET['ip'];
@@ -37,6 +37,15 @@
                   ->order('create_time desc')
                   ->queryAll();
     
+    if(empty($logs)){
+        if(count($_GET)==3){
+            echo "  ip或时间填写错误，请修正！";
+        }else{
+            echo "  ip或时间填写错误，请修正！&  ip或时间填写错误，请修正！&  ip或时间填写错误，请修正！";
+        }
+        die();
+    }
+    
     foreach($logs as $log){
         if(!empty($log['response_content_length']))
             $total+=(int)$log['response_content_length'];
@@ -45,7 +54,13 @@
     $to=strtotime($logs[0]['create_time']);
     $from=strtotime($logs[count($logs)-1]['create_time']);
     $time=$to-$from;
-
-    p($total/1024.0/1024);
+    $perflow=rtrim(substr($total/1024.0/$time,0,5),0);
+    $hourflow=rtrim(substr($perflow*3600/1024.0,0,5),0);
+    if(isset($_GET['isMobile'])){
+        echo "  ".$perflow.'Kb/s'."&  ".$hourflow."Mb/h"."&  ".rtrim(substr($total/1024/1024.0,0,5),0)."Mb";
+    }else{
+        echo "平均流量：".$perflow.'Kb/s'."<br />小时流量：".$hourflow."Mb/h"."<br />总流量：".rtrim(substr($total/1024/1024.0,0,5),0)."Mb";
+    }
+    
     
     
