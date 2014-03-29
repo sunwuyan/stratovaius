@@ -141,12 +141,60 @@ abstract class CApplication extends CModule
 		Yii::setPathOfAlias('application',$this->getBasePath());
 		Yii::setPathOfAlias('webroot',dirname($_SERVER['SCRIPT_FILENAME']));
 		Yii::setPathOfAlias('ext',$this->getBasePath().DIRECTORY_SEPARATOR.'extensions');
-
-		$this->preinit();
+//        p(Yii::getAliases());
+        /*
+         array(5) {
+         ["system"] => string(45) "/Library/WebServer/Documents/y/yii3/framework"
+         ["zii"] => string(49) "/Library/WebServer/Documents/y/yii3/framework/zii"
+         ["application"] => string(51) "/Library/WebServer/Documents/y/testdriver/protected"
+         ["webroot"] => string(41) "/Library/WebServer/Documents/y/testdriver"
+         ["ext"] => string(62) "/Library/WebServer/Documents/y/testdriver/protected/extensions"
+         }
+         */
+		$this->preinit(); //CModule#,donothing!
 
 		$this->initSystemHandlers();
 		$this->registerCoreComponents();
-
+//        p($config);
+        /*
+         array(6) {
+         ["name"] => string(18) "My Web Application"
+         ["preload"] => array(1) {
+         [0] => string(3) "log"
+         }
+         ["import"] => array(2) {
+         [0] => string(20) "application.models.*"
+         [1] => string(24) "application.components.*"
+         }
+         ["modules"] => array(0) {
+         }
+         ["components"] => array(4) {
+         ["user"] => array(1) {
+         ["allowAutoLogin"] => bool(true)
+         }
+         ["db"] => array(3) {
+         ["connectionString"] => string(37) "mysql:host=10.235.168.95;dbname=wmock"
+         ["username"] => string(4) "root"
+         ["password"] => string(7) "alex121"
+         }
+         ["errorHandler"] => array(1) {
+         ["errorAction"] => string(10) "site/error"
+         }
+         ["log"] => array(2) {
+         ["class"] => string(10) "CLogRouter"
+         ["routes"] => array(1) {
+         [0] => array(2) {
+         ["class"] => string(13) "CFileLogRoute"
+         ["levels"] => string(14) "error, warning"
+         }
+         }
+         }
+         }
+         ["params"] => array(1) {
+         ["adminEmail"] => string(21) "webmaster@example.com"
+         }
+         }
+         */
 		$this->configure($config);
 		$this->attachBehaviors($this->behaviors);
 		$this->preloadComponents();

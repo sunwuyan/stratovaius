@@ -82,6 +82,11 @@ class YiiBase
 	{
 		return '1.1.13';
 	}
+    
+    public static function getAliases()
+	{
+		return self::$_aliases;
+	}
 
 	/**
 	 * Creates a Web application instance.
@@ -252,13 +257,23 @@ class YiiBase
 	 * a valid path alias once backslash characters are replaced with dot characters.
 	 * For example, the namespace <code>application\components</code> must correspond to a valid
 	 * path alias <code>application.components</code>.
-	 *
+     ####jinshan:
+	 * @attention {
+     *              1.includes the class file when the class is referenced the first time
+                    2.Importing a directory is equivalent to adding a directory into the PHP include path.
+	 *                If multiple directories are imported, the directories imported later will take
+	 *                precedence in class file searching
+                    3.The same path alias can be imported multiple times, but only the first time is effective.
+	 *                Importing a directory does not import any of its subdirectories
+     *
+     * }
 	 * @param string $alias path alias to be imported
 	 * @param boolean $forceInclude whether to include the class file immediately. If false, the class file
 	 * will be included only when the class is being used. This parameter is used only when
 	 * the path alias refers to a class.
 	 * @return string the class name or the directory that this alias refers to
 	 * @throws CException if the alias is invalid
+     jinshan####
 	 */
 	public static function import($alias,$forceInclude=false)
 	{
