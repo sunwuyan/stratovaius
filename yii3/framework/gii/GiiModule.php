@@ -131,6 +131,41 @@ class GiiModule extends CWebModule
 		), false);
 		$this->generatorPaths[]='gii.generators';
 		$this->controllerMap=$this->findGenerators();
+               # p($this->controllerMap);
+/*
+array(5) {
+  ["controller"] => array(2) {
+    ["class"] => string(45) "gii.generators.controller.ControllerGenerator"
+    ["templates"] => array(1) {
+      ["default"] => string(94) "/home/jinshan/Documents/stratovaius/yii3/framework/gii/generators/controller/templates/default"
+    }
+  }
+  ["crud"] => array(2) {
+    ["class"] => string(33) "gii.generators.crud.CrudGenerator"
+    ["templates"] => array(1) {
+      ["default"] => string(88) "/home/jinshan/Documents/stratovaius/yii3/framework/gii/generators/crud/templates/default"
+    }
+  }
+  ["form"] => array(2) {
+    ["class"] => string(33) "gii.generators.form.FormGenerator"
+    ["templates"] => array(1) {
+      ["default"] => string(88) "/home/jinshan/Documents/stratovaius/yii3/framework/gii/generators/form/templates/default"
+    }
+  }
+  ["model"] => array(2) {
+    ["class"] => string(35) "gii.generators.model.ModelGenerator"
+    ["templates"] => array(1) {
+      ["default"] => string(89) "/home/jinshan/Documents/stratovaius/yii3/framework/gii/generators/model/templates/default"
+    }
+  }
+  ["module"] => array(2) {
+    ["class"] => string(37) "gii.generators.module.ModuleGenerator"
+    ["templates"] => array(1) {
+      ["default"] => string(90) "/home/jinshan/Documents/stratovaius/yii3/framework/gii/generators/module/templates/default"
+    }
+  }
+}
+*/
 	}
 
 	/**
