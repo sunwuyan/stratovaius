@@ -12,9 +12,7 @@ $config=dirname(__FILE__).'/protected/config/main.php';
 
 require_once($yii);
 Yii::createWebApplication($config)->run();
-#echo CHtml::checkBoxList('mylist[goods]','first',array('first'=>'a>e','multi','c','d'),array());
-
-#p(Yii::app()->cache);
+// p(Yii::app()->db);
 
 
 
