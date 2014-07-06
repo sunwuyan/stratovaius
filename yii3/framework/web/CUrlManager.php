@@ -211,6 +211,16 @@ class CUrlManager extends CApplicationComponent
 	 */
 	protected function processRules()
 	{
+// 		p($this->rules);
+/*
+ * array(5) {
+  ["gii"] => string(3) "gii"
+  ["gii/<controller:\w+>"] => string(16) "gii/<controller>"
+  ["gii/<controller:\w+>/<action:\w+>"] => string(25) "gii/<controller>/<action>"
+  ["<controller:\w+>/<action:\w+>/*"] => string(21) "<controller>/<action>"
+  ["<module:\w+>/<controller:\w+>/<action:\w+>/*"] => string(30) "<module>/<controller>/<action>"
+}
+ */
 		if(empty($this->rules) || $this->getUrlFormat()===self::GET_FORMAT)
 			return;
 		if($this->cacheID!==false && ($cache=Yii::app()->getComponent($this->cacheID))!==null)
@@ -292,6 +302,7 @@ class CUrlManager extends CApplicationComponent
 		else
 			$anchor='';
 		$route=trim($route,'/');
+// 		p($this->getBaseUrl());//string '/y/blog/index.php' (length=17)
 		foreach($this->_rules as $i=>$rule)
 		{
 			if(is_array($rule))
@@ -359,7 +370,10 @@ class CUrlManager extends CApplicationComponent
 		if($this->getUrlFormat()===self::PATH_FORMAT)
 		{
 			$rawPathInfo=$request->getPathInfo();
+// 			p($rawPathInfo);//string 'site/page/view/about' (length=20)
+// 			http://localhost/y/blog/index.php/site/page/view/about
 			$pathInfo=$this->removeUrlSuffix($rawPathInfo,$this->urlSuffix);
+// 			p($pathInfo);//string 'site/page/view/about' (length=20)
 			foreach($this->_rules as $i=>$rule)
 			{
 				if(is_array($rule))
@@ -641,6 +655,8 @@ class CUrlRule extends CBaseUrlRule
 	 */
 	public function __construct($route,$pattern)
 	{
+// 		p($route);//string '<module>/<controller>/<action>' (length=30)
+// 		p($pattern);//string '<module:\w+>/<controller:\w+>/<action:\w+>/*' (length=44)
 		if(is_array($route))
 		{
 			foreach(array('urlSuffix', 'caseSensitive', 'defaultParams', 'matchValue', 'verb', 'parsingOnly') as $name)
@@ -653,7 +669,7 @@ class CUrlRule extends CBaseUrlRule
 			$route=$route[0];
 		}
 		$this->route=trim($route,'/');
-
+// 		p($this->route);//string '<module>/<controller>/<action>' (length=30)
 		$tr2['/']=$tr['/']='\\/';
 
 		if(strpos($route,'<')!==false && preg_match_all('/<(\w+)>/',$route,$matches2))
@@ -661,7 +677,27 @@ class CUrlRule extends CBaseUrlRule
 			foreach($matches2[1] as $name)
 				$this->references[$name]="<$name>";
 		}
-
+// 		p($matches2);
+/*
+ * array (size=2)
+  0 => 
+    array (size=3)
+      0 => string '<module>' (length=8)
+      1 => string '<controller>' (length=12)
+      2 => string '<action>' (length=8)
+  1 => 
+    array (size=3)
+      0 => string 'module' (length=6)
+      1 => string 'controller' (length=10)
+      2 => string 'action' (length=6)
+ */
+// 		p($this->references);
+/*
+ * array (size=3)
+  'module' => string '<module>' (length=8)
+  'controller' => string '<controller>' (length=12)
+  'action' => string '<action>' (length=8)
+ */
 		$this->hasHostInfo=!strncasecmp($pattern,'http://',7) || !strncasecmp($pattern,'https://',8);
 
 		if($this->verb!==null)
@@ -681,19 +717,60 @@ class CUrlRule extends CBaseUrlRule
 					$this->params[$name]=$value;
 			}
 		}
+// 		p($matches);
+/*
+ * array (size=3)
+  0 => 
+    array (size=3)
+      0 => string '<module:\w+>' (length=12)
+      1 => string '<controller:\w+>' (length=16)
+      2 => string '<action:\w+>' (length=12)
+  1 => 
+    array (size=3)
+      0 => string 'module' (length=6)
+      1 => string 'controller' (length=10)
+      2 => string 'action' (length=6)
+  2 => 
+    array (size=3)
+      0 => string '\w+' (length=3)
+      1 => string '\w+' (length=3)
+      2 => string '\w+' (length=3)
+ */
+// 		p($tr);
+/*
+ * array (size=4)
+  '/' => string '\/' (length=2)
+  '<module>' => string '(?P<module>\w+)' (length=15)
+  '<controller>' => string '(?P<controller>\w+)' (length=19)
+  '<action>' => string '(?P<action>\w+)' (length=15)
+ */		
+// 		p($tr2);
+/*
+ * array (size=4)
+  '/' => string '\/' (length=2)
+  '<module>' => string '(?P<module>\w+)' (length=15)
+  '<controller>' => string '(?P<controller>\w+)' (length=19)
+  '<action>' => string '(?P<action>\w+)' (length=15)
+ */
 		$p=rtrim($pattern,'*');
 		$this->append=$p!==$pattern;
+// 		p($this->append);//boolean true
 		$p=trim($p,'/');
+// 		p($p);//string '<module:\w+>/<controller:\w+>/<action:\w+>' (length=42)
 		$this->template=preg_replace('/<(\w+):?.*?>/','<$1>',$p);
+// 		p($this->template);//string '<module>/<controller>/<action>' (length=30)
 		$this->pattern='/^'.strtr($this->template,$tr).'\/';
+		
 		if($this->append)
 			$this->pattern.='/u';
 		else
 			$this->pattern.='$/u';
-
+// 		p($this->pattern);
+// 		string '/^(?P<module>\w+)\/(?P<controller>\w+)\/(?P<action>\w+)\//u' (length=59)
 		if($this->references!==array())
 			$this->routePattern='/^'.strtr($this->route,$tr2).'$/u';
-
+// 		p($this->routePattern);
+// 		string '/^(?P<module>\w+)\/(?P<controller>\w+)\/(?P<action>\w+)$/u' (length=58)
 		if(YII_DEBUG && @preg_match($this->pattern,'test')===false)
 			throw new CException(Yii::t('yii','The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.',
 				array('{route}'=>$route,'{pattern}'=>$pattern)));
@@ -720,6 +797,7 @@ class CUrlRule extends CBaseUrlRule
 		$tr=array();
 		if($route!==$this->route)
 		{
+// 			p($this->routePattern);// /^(?P<controller>\w+)\/(?P<action>\w+)$/u
 			if($this->routePattern!==null && preg_match($this->routePattern.$case,$route,$matches))
 			{
 				foreach($this->references as $key=>$name)
@@ -728,6 +806,12 @@ class CUrlRule extends CBaseUrlRule
 			else
 				return false;
 		}
+// 		p($tr);
+/*
+ * array (size=2)
+  '<controller>' => string 'post' (length=4)
+  '<action>' => string 'index' (length=5)
+ */
 
 		foreach($this->defaultParams as $key=>$value)
 		{
@@ -760,7 +844,7 @@ class CUrlRule extends CBaseUrlRule
 		}
 
 		$suffix=$this->urlSuffix===null ? $manager->urlSuffix : $this->urlSuffix;
-
+// 		p($this->template);//<controller>/<action>
 		$url=strtr($this->template,$tr);
 
 		if($this->hasHostInfo)
@@ -795,6 +879,7 @@ class CUrlRule extends CBaseUrlRule
 	 */
 	public function parseUrl($manager,$request,$pathInfo,$rawPathInfo)
 	{
+// 		p(func_get_args());
 		if($this->verb!==null && !in_array($request->getRequestType(), $this->verb, true))
 			return false;
 
@@ -805,8 +890,10 @@ class CUrlRule extends CBaseUrlRule
 
 		if($this->urlSuffix!==null)
 			$pathInfo=$manager->removeUrlSuffix($rawPathInfo,$this->urlSuffix);
-
+// 		p($pathInfo);//string 'site/page/view/about' (length=20)
 		// URL suffix required, but not found in the requested URL
+// 		p($manager->useStrictParsing);//boolean false
+// 		p($pathInfo===$rawPathInfo);//boolean true
 		if($manager->useStrictParsing && $pathInfo===$rawPathInfo)
 		{
 			$urlSuffix=$this->urlSuffix===null ? $manager->urlSuffix : $this->urlSuffix;
@@ -818,9 +905,20 @@ class CUrlRule extends CBaseUrlRule
 			$pathInfo=strtolower($request->getHostInfo()).rtrim('/'.$pathInfo,'/');
 
 		$pathInfo.='/';
-
+// 		p($pathInfo);//string 'site/page/view/about/' (length=21)
+// 		p($this->pattern.$case);
+// 		string '/^(?P<controller>\w+)\/(?P<action>\w+)\//u' (length=42)
 		if(preg_match($this->pattern.$case,$pathInfo,$matches))
 		{
+// 			p($matches);
+/*
+ * array (size=5)
+  0 => string 'site/page/' (length=10)
+  'controller' => string 'site' (length=4)
+  1 => string 'site' (length=4)
+  'action' => string 'page' (length=4)
+  2 => string 'page' (length=4)
+ */
 			foreach($this->defaultParams as $name=>$value)
 			{
 				if(!isset($_GET[$name]))
@@ -834,8 +932,16 @@ class CUrlRule extends CBaseUrlRule
 				elseif(isset($this->params[$key]))
 					$_REQUEST[$key]=$_GET[$key]=$value;
 			}
+// 			p($tr);
+/*
+ * array (size=2)
+  '<controller>' => string 'site' (length=4)
+  '<action>' => string 'page' (length=4)
+ */
 			if($pathInfo!==$matches[0]) // there're additional GET params
 				$manager->parsePathInfo(ltrim(substr($pathInfo,strlen($matches[0])),'/'));
+// 			p($this->routePattern);
+// 			string '/^(?P<controller>\w+)\/(?P<action>\w+)$/u' (length=41)
 			if($this->routePattern!==null)
 				return strtr($this->route,$tr);
 			else

@@ -79,9 +79,9 @@ return array(
 			'tablePrefix' => 'tbl_',
 		),
 
-		'cache'=>array(
-            	      'class'=>'ext.yiiredis.ARedisCache',
-		 ),
+// 		'cache'=>array(
+//             	      'class'=>'ext.yiiredis.ARedisCache',
+// 		 ),
 
 		// uncomment the following to use a MySQL database
 		/*
@@ -109,13 +109,13 @@ return array(
 		//'urlSuffix'=>'.html',
 		//'showScriptName'=>false,	
         	'rules'=>array(
-			'gii'=>'gii',
-            		'gii/<controller:\w+>'=>'gii/<controller>',
-            		'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
-/*
+// 			'gii'=>'gii',
+//             		'gii/<controller:\w+>'=>'gii/<controller>',
+//             		'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
+
         		'<controller:\w+>/<action:\w+>/*'=>'<controller>/<action>',
         		'<module:\w+>/<controller:\w+>/<action:\w+>/*'=>'<module>/<controller>/<action>',
-		*/	),	
+			),	
         ),
     
 		'log'=>array(
