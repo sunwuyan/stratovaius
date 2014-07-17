@@ -585,9 +585,10 @@ class CController extends CBaseController
 	{
 		if(($theme=Yii::app()->getTheme())!==null && ($viewFile=$theme->getViewFile($this,$viewName))!==false)
 			return $viewFile;
-		$moduleViewPath=$basePath=Yii::app()->getViewPath();
+		$moduleViewPath=$basePath=Yii::app()->getViewPath();//bpv
 		if(($module=$this->getModule())!==null)
 			$moduleViewPath=$module->getViewPath();
+// 										 index         bpvp             bpv        bpv
 		return $this->resolveViewFile($viewName,$this->getViewPath(),$basePath,$moduleViewPath);
 	}
 
@@ -683,7 +684,7 @@ class CController extends CBaseController
 	 * @param string $moduleViewPath the directory that is used to search for an absolute view name under the current module.
 	 * If this is not set, the application base view path will be used.
 	 * @return mixed the view file path. False if the view file does not exist.
-	 */
+ 	 */  //                           index      bpvp       bpv         bpv
 	public function resolveViewFile($viewName,$viewPath,$basePath,$moduleViewPath=null)
 	{
 		if(empty($viewName))
@@ -864,7 +865,7 @@ class CController extends CBaseController
 	 */
 	public function renderPartial($view,$data=null,$return=false,$processOutput=false)
 	{
-		if(($viewFile=$this->getViewFile($view))!==false)
+		if(($viewFile=$this->getViewFile($view))!==false) // /y/blog/protected/views/post/index.php
 		{
 			$output=$this->renderFile($viewFile,$data,true);
 			if($processOutput)
